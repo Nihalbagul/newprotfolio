@@ -1,72 +1,45 @@
-import React, { useRef, useEffect } from 'react'
-import { useGLTF, useHelper } from '@react-three/drei'
-import { useThree } from '@react-three/fiber'
-import * as THREE from 'three'
+import React from 'react'
+import { useGLTF } from '@react-three/drei'
 
 export default function Room(props) {
-  const { nodes, materials } = useGLTF('/models/computer_and_laptop.glb')
-  const roomRef = useRef()
-  const { camera } = useThree()
-
-  // Optional: Visualize the bounding box (remove in production)
-  useHelper(roomRef, THREE.BoxHelper, 'cyan')
-
-  useEffect(() => {
-    if (roomRef.current) {
-      // Calculate the bounding box of the entire room
-      const box = new THREE.Box3().setFromObject(roomRef.current)
-      const size = box.getSize(new THREE.Vector3())
-      const center = box.getCenter(new THREE.Vector3())
-
-      // Calculate the ideal camera distance
-      const maxDim = Math.max(size.x, size.y, size.z)
-      const fov = camera.fov * (Math.PI / 180)
-      let cameraZ = Math.abs(maxDim / Math.tan(fov / 2)) * 1.1
-
-      // Adjust for perspective
-      camera.position.set(center.x, center.y, cameraZ)
-      camera.lookAt(center)
-      camera.updateProjectionMatrix()
-    }
-  }, [])
-
+  const { nodes, materials } = useGLTF('/models/low-poly_camp.glb')
   return (
-    <group ref={roomRef} scale={[0.1, 0.1, 0.1]} position={[0, -5, 0]} {...props} dispose={null}>
-      <group position={[16.678, 8.418, 24.507]} rotation={[-Math.PI, -0.592, -Math.PI]} scale={[2.549, 0.243, 2.549]}>
-        <mesh geometry={nodes.Object_4.geometry} material={materials['CHAIR-0']} />
-        <mesh geometry={nodes.Object_5.geometry} material={materials['WHEEL-0']} />
-        <mesh geometry={nodes.Object_6.geometry} material={materials['WHEEL-CAP-0']} />
-        <mesh geometry={nodes.Object_7.geometry} material={materials['WHEEL-NUT-0']} />
-        <mesh geometry={nodes.Object_8.geometry} material={materials['CHAIR-LEGS-0']} />
-        <mesh geometry={nodes.Object_9.geometry} material={materials['CHAIR-COVER-0']} />
+    <group {...props} dispose={null}>
+      <group rotation={[-Math.PI / 2, 0, 0]}>
+        <mesh geometry={nodes.Cube_0.geometry} material={materials.rumput} rotation={[-Math.PI, 0, -Math.PI]} scale={[-6.637, 6.637, 0.133]} />
+        <mesh geometry={nodes.Circle001_0.geometry} material={materials.pohon} position={[1.628, 4.262, 3.252]} rotation={[0, 0, -0.842]} scale={[1.154, 1.154, 3.838]} />
+        <mesh geometry={nodes.Cube005_0.geometry} material={materials.pohon_4} position={[4.818, 2.737, 1.447]} rotation={[0, 0, -1.947]} scale={[0.663, 0.663, 1.2]} />
+        <mesh geometry={nodes.Circle004_0.geometry} material={materials.pohon_3} position={[0.289, 0.918, 0.069]} />
+        <mesh geometry={nodes.Cube009_0.geometry} material={materials.Tent} position={[-0.474, -0.555, 1.817]} rotation={[0, 0, 0.348]} scale={[0.94, 0.94, 0.157]} />
+        <mesh geometry={nodes.Cube013_0.geometry} material={materials.tali} position={[1.483, -0.038, 0.932]} rotation={[-0.38, -0.078, -2.886]} scale={[0.005, 0.233, 0.005]} />
+        <mesh geometry={nodes.Cube010_0.geometry} material={materials.batu} position={[1.718, 0.127, 1.221]} />
+        <mesh geometry={nodes.Cylinder001_0.geometry} material={materials['Material.003']} position={[-1.492, -2.6, 0.175]} rotation={[1.571, 0.402, -1.571]} scale={[0.185, 0.185, 0.609]} />
+        <mesh geometry={nodes.Cylinder005_0.geometry} material={materials.kayu_bakar} position={[-0.208, -1.966, 0.126]} rotation={[0.843, 0.584, -1.643]} scale={[0.022, 0.022, 0.163]} />
+        <mesh geometry={nodes.Circle006_0.geometry} material={materials.tanah} position={[-0.363, -1.933, 0.069]} />
+        <mesh geometry={nodes.Icosphere000_0.geometry} material={materials.pohon2} position={[4.398, -2.393, 3.288]} rotation={[0, 0, 0.207]} scale={[0.452, 0.452, 0.368]} />
+        <mesh geometry={nodes.Plane_0.geometry} material={materials.baju_1} position={[4.03, -1.554, 1.426]} rotation={[0, Math.PI / 2, 0]} scale={0.172} />
+        <mesh geometry={nodes.Plane001_0.geometry} material={materials.baju_2} position={[4.075, -1.668, 1.349]} rotation={[-Math.PI / 2, 1.555, Math.PI / 2]} scale={[0.296, 0.172, 0.172]} />
+        <mesh geometry={nodes.Plane002_0.geometry} material={materials.baju_3} position={[3.896, -1.954, 1.225]} rotation={[0, Math.PI / 2, 0]} />
+        <mesh geometry={nodes.Cube014_0.geometry} material={materials['Material.001']} rotation={[-Math.PI, 0, -Math.PI]} scale={[-6.637, 6.637, 0.133]} />
+        <mesh geometry={nodes.Cube015_0.geometry} material={materials['Material.009']} position={[-4.522, -2.028, 0.176]} scale={[0.022, 0.161, 0.107]} />
+        <mesh geometry={nodes.Cube016_0.geometry} material={materials['Material.010']} position={[-2.969, -2.121, 1.033]} />
+        <mesh geometry={nodes.Cube017_0.geometry} material={materials.material_10} position={[-3.839, -2.694, 0.091]} scale={0.019} />
+        <mesh geometry={nodes.Cube018_0.geometry} material={materials.material} position={[-0.088, -0.87, 4.006]} />
+        <mesh geometry={nodes.Plane003_0.geometry} material={materials.Root} position={[-1.129, 0.578, 0.079]} rotation={[0, 0, 0.343]} scale={[0.599, 0.804, 0.566]} />
+        <mesh geometry={nodes.Circle016_0.geometry} material={materials.batang} position={[0.592, 2.839, 5.09]} scale={[0.775, 0.775, 1.306]} />
+        <mesh geometry={nodes.Icosphere001_0.geometry} material={materials['Material.012']} position={[-1.444, 0.275, 6.399]} rotation={[2.257, -0.589, -2.685]} scale={0.04} />
+        <mesh geometry={nodes.Plane004_0.geometry} material={materials['Material.002']} position={[-0.806, -0.818, 0.665]} rotation={[-2.271, 1.142, 2.237]} scale={0.563} />
+        <mesh geometry={nodes.Torus001_0.geometry} material={materials.lampu_item} position={[3.945, -2.754, 2.264]} rotation={[-1.956, 0.33, 0.243]} scale={0.03} />
+        <mesh geometry={nodes.Cylinder003_0.geometry} material={materials.lilin} position={[3.927, -2.759, 2.119]} rotation={[0, 0.113, -0.392]} scale={[0.011, 0.011, 0.024]} />
+        <mesh geometry={nodes.Cube002_0.geometry} material={materials.api_lilin} position={[-4.578, -2.899, 0.136]} scale={0.046} />
+        <mesh geometry={nodes.Cube003_0.geometry} material={materials.api_lilin} position={[3.925, -2.758, 2.162]} scale={0.046} />
+        <mesh geometry={nodes.Cube004_0.geometry} material={materials.Root} position={[0, 0, 6.05]} scale={[5.395, 5.395, 6.921]} />
+        <mesh geometry={nodes.Cube006_0.geometry} material={materials.bulan} position={[-4.189, 8.233, 6.301]} />
+        <mesh geometry={nodes.Cube008_0.geometry} material={materials.langit1} position={[2.229, 0.104, 3.972]} rotation={[0, Math.PI / 2, 0]} scale={[4.523, 5.374, 7.475]} />
+        <mesh geometry={nodes.Cube007_0.geometry} material={materials.langit1} position={[10.755, 2.256, 3.972]} rotation={[-Math.PI / 2, 0, Math.PI / 2]} scale={[4.523, 5.374, 7.612]} />
       </group>
-      <group position={[-18.454, 15.918, 9.192]} rotation={[0, 0.926, -Math.PI]} scale={[-5.14, 0.147, 3.341]}>
-        <mesh geometry={nodes.Object_31.geometry} material={materials['LAPTOP-0']} />
-        <mesh geometry={nodes.Object_32.geometry} material={materials['1KB-BASE-0']} />
-        <mesh geometry={nodes.Object_33.geometry} material={materials['1KEYS-0']} />
-        <mesh geometry={nodes.Object_34.geometry} material={materials['SCREEN-0.001']} />
-        <mesh geometry={nodes.Object_35.geometry} material={materials['SIGN-0']} />
-        <mesh geometry={nodes.Object_36.geometry} material={materials['TAG-0']} />
-      </group>
-      <group position={[-2.333, 15.958, 2.159]} rotation={[0, 0.005, 0]} scale={[5.607, 0.175, 1.728]}>
-        <mesh geometry={nodes.Object_38.geometry} material={materials['2KB-0']} />
-        <mesh geometry={nodes.Object_39.geometry} material={materials['1KB-BASE-0.001']} />
-        <mesh geometry={nodes.Object_40.geometry} material={materials['1KEYS-0.001']} />
-      </group>
-      <mesh geometry={nodes.Object_11.geometry} material={materials['COMPUTER-0']} position={[-18.152, 5.799, 9.513]} scale={[2.327, 5.804, 5.98]} />
-      <mesh geometry={nodes.Object_13.geometry} material={materials['1COMPUTER-0']} position={[-24.287, 5.799, 15.387]} scale={[2.327, 5.804, 5.98]} />
-      <mesh geometry={nodes.Object_15.geometry} material={materials['DESK-0']} position={[0, 15.452, 0]} scale={[29.541, 0.336, 8.492]} />
-      <mesh geometry={nodes.Object_17.geometry} material={materials['MAT-0']} position={[0, 0, 14.147]} scale={[46.718, 46.718, 26.649]} />
-      <mesh geometry={nodes.Object_19.geometry} material={materials['SCREEN-0']} position={[0, 21.761, -6.007]} rotation={[Math.PI / 2, 0, 0]} scale={[9.123, 4.323, 5.089]} />
-      <mesh geometry={nodes.Object_21.geometry} material={materials['2PIC-0']} position={[0, 21.761, -5.754]} rotation={[Math.PI / 2, 0, 0]} scale={[8.964, 4.204, 4.87]} />
-      <mesh geometry={nodes.Object_23.geometry} material={materials['1PIC-0']} position={[-16.887, 21.761, -0.693]} rotation={[Math.PI / 2, 0, -0.57]} scale={[8.964, 4.204, 4.87]} />
-      <mesh geometry={nodes.Object_25.geometry} material={materials['3PIC-0']} position={[16.987, 21.761, -0.811]} rotation={[Math.PI / 2, 0, 0.552]} scale={[8.964, 4.204, 4.87]} />
-      <mesh geometry={nodes.Object_27.geometry} material={materials['BASS-0']} position={[0, 4.992, 0.553]} scale={[5.47, 5, 3.905]} />
-      <mesh geometry={nodes.Object_29.geometry} material={materials['SPEAKER-0']} position={[-27.707, 18.537, 8.063]} rotation={[0, 0.588, 0]} scale={[1.076, 1.75, 0.848]} />
-      <mesh geometry={nodes.Object_42.geometry} material={materials['MOUSE-0']} position={[7.641, 16.001, 4.809]} rotation={[0, 0.415, 0]} scale={[0.751, 0.486, 1.161]} />
-      <mesh geometry={nodes.Object_44.geometry} material={materials['MOUSEPAD-0']} position={[7.625, 14.269, 3.664]} scale={3.11} />
     </group>
   )
 }
 
-useGLTF.preload('/models/computer_and_laptop.glb')
+useGLTF.preload('/models/low-poly_camp.glb')

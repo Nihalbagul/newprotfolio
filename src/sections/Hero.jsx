@@ -1,8 +1,14 @@
-import React from 'react'
+import React, { use } from 'react'
 import { words } from '../../constants'
 import Button from '../components/Button'
+import { useGSAP } from '@gsap/react'
+import gsap from 'gsap'
 import Heroexperience from '../components/HeroModels/Heroexperience'
+import AnimatedCounter from '../components/AnimatedCounter'
 const Hero = () => {
+  useGSAP(() => {
+    gsap.fromTo('.hero-text h1', { y: 50, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.2, duration: 1, ease: 'power2.inOut' })  
+  })
   return (
     <section id="hero" className = "relative overflow-hidden">
       <div className="absolute top-0 left-0 z-10">
@@ -45,7 +51,7 @@ const Hero = () => {
 
                 </div>
                 <p className='text-white-50 md:text-xl relative z-10 pointer-events-none'>
-                Hi , I'm Nihal Bagul , a Software Engineer with a passion for turning ideas into functional and visually appealing digital experiences.
+                Hi, I’m Nihal Bagul — a developer from Somnath, Gujarat.
               </p>
               <Button
               text="See My Work"
@@ -56,6 +62,8 @@ const Hero = () => {
 
         </header>
       </div>
+      <AnimatedCounter />
+      
     </section>
   )
 }
