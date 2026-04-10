@@ -1,0 +1,30 @@
+{
+  "nav": {
+    "work": "Trabajo",
+    "experience": "Experiencia",
+    "skills": "Habilidades",
+    "testimonials": "Testimonios"
+  },
+  "hero": {
+    "title": "Desarrollador Full Stack",
+    "subtitle": "Experto en Visualización 3D",
+    "description": "Desarrollador Full Stack y Experto en Visualización 3D creando experiencias web inmersivas con React, Node.js y Three.js. Basado en Somnath, Gujarat.",
+    "cta": "Ver Mi Trabajo"
+  },
+  "about": {
+    "title": "Sobre Mí",
+    "subtitle": "Desarrollador Full Stack y Experto en Visualización 3D"
+  },
+  "contact": {
+    "title": "Ponerse en Contacto",
+    "subtitle": "Trabajemos juntos",
+    "name": "Nombre",
+    "email": "Correo",
+    "message": "Mensaje",
+    "send": "Enviar Mensaje"
+  },
+  "footer": {
+    "copyright": "Todos los derechos reservados"
+  }
+}
+
