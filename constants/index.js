@@ -17,10 +17,6 @@ const navLinks = [
     name: "Work",
     link: "#projects",
   },
-  {
-    name: "Testimonials",
-    link: "#testimonials",
-  },
 ];
 
 // Items are intentionally doubled to create a seamless CSS infinite-scroll loop
@@ -184,8 +180,8 @@ const expCards = [
   },
   {
     review: "At MidLead, Nihal demonstrated strong full-stack capabilities, contributing to both frontend and backend systems with scalable architecture.",
-    imgPath: "/images/logon3.png",
-    logoPath: "/images/logob3.png",
+    imgPath: "/images/ideas.svg",
+    logoPath: null,
     title: "Software Engineer",
     date: "Nov 2024 - Jan 2025",
     responsibilities: [
@@ -210,8 +206,8 @@ const expCards = [
   },
   {
     review: "Nihal’s internship at Purpose Buddy reflected his UI/UX design sensibilities and frontend development excellence.",
-    imgPath: "/images/exp5.png",
-    logoPath: "/images/logo5.png",
+    imgPath: "/images/ideas.svg",
+    logoPath: null,
     title: "Full Stack Laravel Developer Intern",
     date: "Sep 2024 - Oct 2024",
     responsibilities: [
@@ -223,8 +219,8 @@ const expCards = [
   },
   {
     review: "At Infinity.com | Uma School, Nihal played a pivotal backend role, streamlining processes and building reliable API services.",
-    imgPath: "/images/exp6.png",
-    logoPath: "/images/logo6.png",
+    imgPath: "/images/ideas.svg",
+    logoPath: null,
     title: "Backend Developer",
     date: "Aug 2024 - Sep 2024",
     responsibilities: [

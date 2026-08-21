@@ -20,7 +20,6 @@ import SkipToContent from './components/SkipToContent'
 const ProjectsSection = lazy(() => import('./sections/ProjectsSection'))
 const LogoSection = lazy(() => import('./components/LogoSection'))
 const ExperienceSection = lazy(() => import('./sections/ExperienceSection'))
-const TestimonialsEnhanced = lazy(() => import('./sections/TestimonialsEnhanced'))
 const Contact = lazy(() => import('./sections/Contact'))
 const Footer = lazy(() => import('./sections/Footer'))
 const StatsSection = lazy(() => import('./sections/StatsSection'))
@@ -110,9 +109,6 @@ const App = () => {
         </Suspense>
         <Suspense fallback={<SectionLoader />}>
           <LogoSection/>
-        </Suspense>
-        <Suspense fallback={<SectionLoader />}>
-          <TestimonialsEnhanced/>
         </Suspense>
         <Suspense fallback={<SectionLoader />}>
           <BlogSection />

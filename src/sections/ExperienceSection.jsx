@@ -95,19 +95,27 @@ const ExperienceCard = ({ card, index, total }) => {
           {/* Top Section - Logo, Title, Date */}
           <div className="new-card-top">
             <div className="new-card-logo">
-              <img 
-                src={card.logoPath} 
-                alt="Company" 
-                onError={(e) => {
-                  e.target.style.display = 'none';
-                  if (e.target.nextSibling) {
-                    e.target.nextSibling.style.display = 'flex';
-                  }
-                }}
-              />
-              <div className="new-card-logo-fallback" style={{ display: 'none' }}>
-                {card.title.charAt(0)}
-              </div>
+              {card.logoPath ? (
+                <>
+                  <img
+                    src={card.logoPath}
+                    alt="Company"
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                      if (e.target.nextSibling) {
+                        e.target.nextSibling.style.display = 'flex';
+                      }
+                    }}
+                  />
+                  <div className="new-card-logo-fallback" style={{ display: 'none' }}>
+                    {card.title.charAt(0)}
+                  </div>
+                </>
+              ) : (
+                <div className="new-card-logo-fallback">
+                  {card.title.charAt(0)}
+                </div>
+              )}
             </div>
             <div className="new-card-header-text">
               <h3 className="new-card-title">{card.title}</h3>
