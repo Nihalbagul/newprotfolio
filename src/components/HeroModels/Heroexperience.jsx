@@ -22,16 +22,15 @@ const SafeEffectComposer = () => {
       try {
         if (!gl || !scene || !camera) return false;
         if (!gl.domElement) return false;
-        
-        // Check if WebGL context is valid
-        const canvas = gl.domElement;
-        if (canvas) {
-          const context = canvas.getContext('webgl') || canvas.getContext('webgl2');
-          if (context && context.isContextLost && context.isContextLost()) {
-            return false;
-          }
+
+        // Check if WebGL context is valid using the renderer's own context
+        // (requesting a new context type via canvas.getContext() here would
+        // conflict with the webgl2 context three.js already created)
+        const context = gl.getContext?.();
+        if (context && context.isContextLost && context.isContextLost()) {
+          return false;
         }
-        
+
           // Check if renderer has a valid render target
           const renderTarget = gl.getRenderTarget();
           if (renderTarget === null || (renderTarget && renderTarget.texture)) {

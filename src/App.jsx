@@ -8,7 +8,6 @@ import ScrollProgress from './components/ScrollProgress'
 import BackToTop from './components/BackToTop'
 import ThemeToggle from './components/ThemeToggle'
 import AboutMe from './sections/AboutMe'
-import { useSmoothScroll } from './hooks/useSmoothScroll'
 import { useTheme } from './hooks/useTheme'
 import { trackPageView } from './utils/analytics'
 import ErrorBoundary from './components/ErrorBoundary'
@@ -63,7 +62,6 @@ const SectionLoader = () => (
 
 
 const App = () => {
-  useSmoothScroll();
   useTheme(); // Initialize theme system
 
   useEffect(() => {
