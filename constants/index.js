@@ -156,25 +156,11 @@ const techStackIcons = [
 
 const expCards = [
   {
-    review: "At Edzok, Nihal contributes as an SDE by building scalable product features, improving reliability, and helping ship high-quality releases faster.",
-    imgPath: "/images/ideas.svg",
-    logoPath: "/images/code.svg",
-    title: "Software Development Engineer (SDE) - Edzok",
-    date: "Mar 2026 - Present",
-    responsibilities: [
-      "Developing and maintaining production-grade full-stack features with strong focus on scalability and performance.",
-      "Designing clean backend APIs and integrating them with frontend modules for seamless product workflows.",
-      "Collaborating with cross-functional teams to plan, implement, and ship sprint-based deliverables.",
-      "Improving code quality through reusable architecture patterns, debugging, and peer code reviews.",
-      "Optimizing application performance, monitoring key metrics, and addressing production issues proactively.",
-    ],
-  },
-  {
     review: "At Truelogic India, Nihal has consistently delivered high-quality backend and 3D visualization solutions, playing a key role in enhancing user engagement and product efficiency.",
     imgPath: "/images/logon1.png",
     logoPath: "/images/logob1.png",
     title: "Software Engineer",
-    date: "Feb 2025 - Present",
+    date: "Feb 2025 - Dec 2025",
     responsibilities: [
       "Developed robust backend solutions using PHP, Laravel, and CodeIgniter for scalable web applications.",
       "Created dynamic 3D visualizations using Three.js and integrated them with backend data.",

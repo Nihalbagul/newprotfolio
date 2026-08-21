@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { expCards } from '../../constants'
 import TitleHeader from '../components/TitleHeader'
 import { useIsMobile } from '../hooks/useMediaQuery'

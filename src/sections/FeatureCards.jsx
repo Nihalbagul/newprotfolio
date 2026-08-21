@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import { motion } from 'framer-motion'
+import { motion } from 'framer-motion';
+
 import { abilities } from '../../constants'
 
 const FeatureCard = ({ imgPath, title, desc, index }) => {

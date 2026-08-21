@@ -89,7 +89,7 @@ const Hero = () => {
               <div className="w-fit hero-meta-block">
                 <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold border border-purple-300/35 text-purple-100 bg-purple-500/12">
                   <span className="h-2 w-2 rounded-full bg-purple-300 shadow-[0_0_12px_rgba(216,180,254,0.8)]" />
-                  2+ years experience | SDE at Edzok
+                  2+ years experience | Freelance SDE
                 </span>
               </div>
 

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 
+
 const NotFound = () => {
 
   const handleGoHome = () => {

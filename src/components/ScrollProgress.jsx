@@ -1,5 +1,5 @@
 import { useScrollProgress } from '../hooks/useScrollProgress';
-import { useSpring, motion } from 'framer-motion';
+import { motion, useSpring } from 'framer-motion';
 import { memo } from 'react';
 
 const ScrollProgress = memo(() => {

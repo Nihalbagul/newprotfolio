@@ -3,9 +3,7 @@ import gsap from "gsap";
 
 import TitleHeader from "../components/TitleHeader";
 import Techicon from "../components/Models/TechLogos/TechIcon";
-import { techStackIcons } from "../../constants";
 import Tech from "../components/Tech";
-// import { techStackImgs } from "../constants";
 
 const TechStack = () => {
   // Animate the tech cards in the skills section

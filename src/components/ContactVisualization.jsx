@@ -1,6 +1,7 @@
 import { useRef, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
+
 const FloatingShape = ({ index, delay }) => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const shapeRef = useRef(null);

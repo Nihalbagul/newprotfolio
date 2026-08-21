@@ -1,7 +1,7 @@
 import { OrbitControls, Environment } from "@react-three/drei";
 import { Canvas, useThree, useFrame } from "@react-three/fiber";
 import RoomModel from "./RoomModel";
-import { Suspense, useState, useRef } from "react";
+import { Suspense, useState } from "react";
 import * as THREE from "three";
 
 const LoadingFallback = () => {
@@ -11,39 +11,6 @@ const LoadingFallback = () => {
       <meshStandardMaterial color="#8b5cf6" wireframe />
     </mesh>
   );
-};
-
-const CameraInfoDisplay = () => {
-  const { camera } = useThree();
-  const controlsRef = useRef();
-  const [info, setInfo] = useState({
-    position: [0, 0, 0],
-    rotation: [0, 0, 0],
-    distance: 0,
-    target: [0, 0, 0],
-  });
-
-  useFrame(() => {
-    if (camera) {
-      const pos = camera.position;
-      const rot = camera.rotation;
-      const target = new THREE.Vector3(0, 0, 0);
-      const distance = camera.position.distanceTo(target);
-      
-      setInfo({
-        position: [pos.x.toFixed(2), pos.y.toFixed(2), pos.z.toFixed(2)],
-        rotation: [
-          (rot.x * (180 / Math.PI)).toFixed(2),
-          (rot.y * (180 / Math.PI)).toFixed(2),
-          (rot.z * (180 / Math.PI)).toFixed(2),
-        ],
-        distance: distance.toFixed(2),
-        target: [target.x.toFixed(2), target.y.toFixed(2), target.z.toFixed(2)],
-      });
-    }
-  });
-
-  return null; // This component just updates state, display is handled outside
 };
 
 const CameraInfo = ({ info }) => {

@@ -1,6 +1,7 @@
 import React from "react";
+import { motion } from 'framer-motion';
 import { socialImgs, navLinks, emailAddress, phoneNumber } from "../../constants";
-import { motion } from "framer-motion";
+
 
 // SVG Icons for social media
 const SocialIcon = ({ name, imgPath }) => {

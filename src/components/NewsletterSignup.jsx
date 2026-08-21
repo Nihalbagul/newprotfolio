@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+
 import { trackEvent } from '../utils/analytics';
 
 const NewsletterSignup = ({ className = "" }) => {

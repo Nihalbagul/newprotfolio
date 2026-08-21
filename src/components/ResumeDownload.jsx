@@ -1,5 +1,6 @@
-import { motion } from 'framer-motion';
+
 import { resumeLink } from '../../constants';
+import { motion } from 'framer-motion';
 
 const ResumeDownload = ({ className = "" }) => {
   const handleDownload = () => {

@@ -1385,11 +1385,6 @@ html.light * {
         opacity: 1 !important;
       }
       
-      .mobile-menu-btn-wrapper.xl\\:hidden {
-        display: flex !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-      }
     }
     
     @media (max-width: 640px) {
@@ -19651,11 +19646,6 @@ a:focus-visible {
 
   .navbar .logo-divider {
     font-size: 14px !important;
-  }
-
-  /* Hide language switcher and theme toggle on very small screens */
-  .navbar .hidden.sm\\:flex {
-    display: none !important;
   }
 
   /* Mobile menu button - make it more prominent */

@@ -1,12 +1,11 @@
 import { motion, useInView } from 'framer-motion';
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 import { caseStudies } from '../../constants';
 import TitleHeader from '../components/TitleHeader';
 
 const CaseStudiesSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const [selectedCase, setSelectedCase] = useState(null);
 
   const featuredCases = caseStudies.filter(cs => cs.featured);
   const otherCases = caseStudies.filter(cs => !cs.featured);
